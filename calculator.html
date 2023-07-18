@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Dachi Bendukidze"> 
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="calculation-container">
+            <p class="js-calculation calculation">_</p>
+            <p class="js-too-long-message too-long-message">Too Long!</p>
+        </div>
+        <div class="calculator-grid">
+            <div class="row1">
+                <button onclick="
+                    if(calculation.length < 162){
+                    if(calculation === '_'){
+                        calculation = '';
+                    };
+                    calculation+='1';
+                    displayCalculation();}
+                    else{document.querySelector('.js-too-long-message').classList.add('too-long-message-appear')}  
+                " class="number">
+                    1
+                </button>
+                <button onclick="
+                    if(calculation.length < 162){
+                    if(calculation === '_'){
+                        calculation = '';
+                    };
+                    calculation+='2';
+                    displayCalculation();}
+                    else{document.querySelector('.js-too-long-message').classList.add('too-long-message-appear')}  
+                " class="number">
+                    2
+                </button>
+            
+                <button onclick="
+                    if(calculation.length < 162){
+                    if(calculation === '_'){
+                        calculation = '';
+                    };
+                    calculation+='3';
+                    displayCalculation();}
+                    else{document.querySelector('.js-too-long-message').classList.add('too-long-message-appear')}        
+                " class="number">
+                    3
+                </button>
+                <button onclick="
+                    if(calculation.length < 162){
+                    if(calculation === '_'){
+                        calculation = '';
+                    };
+                    calculation+=' + ';
+                    displayCalculation();}
+                    else{document.querySelector('.js-too-long-message').classList.add('too-long-message-appear')}        
+                " class="symbol">
+                    +
+                </button>
+            </div>
+            <div class="row2">     
+                <button onclick="
+                    if(calculation.length < 162){
+                    if(calculation === '_'){
+                        calculation = '';
+                    };
+                    calculation+='4';
+                    displayCalculation();}
+                    else{document.querySelector('.js-too-long-message').classList.add('too-long-message-appear')};        
+                " class="number">
+                    4
+                </button>
+                <button onclick="
+                    if(calculation.length < 162){
+                    if(calculation === '_'){
+                        calculation = '';
+                    };
+                    calculation+='5';
+                    displayCalculation();}
+                    else{document.querySelector('.js-too-long-message').classList.add('too-long-message-appear')}       
+                " class="number">
+                    5
+                </button>
+                <button onclick="
+                    if(calculation.length < 162){
+                    if(calculation === '_'){
+                        calculation = '';
+                    };
+                    calculation+='6';
+                    displayCalculation();}
+                    else{document.querySelector('.js-too-long-message').classList.add('too-long-message-appear')}       
+                " class="number">
+                    6
+                </button>
+                <button onclick="
+                   if(calculation.length < 162){
+                    if(calculation === '_'){
+                        calculation = '';
+                    };
+                    calculation+=' - ';
+                    displayCalculation();}
+                    else{document.querySelector('.js-too-long-message').classList.add('too-long-message-appear')}        
+                " class="symbol">
+                    -
+                </button>
+            </div>
+            <div class="row3">
+                <button onclick="
+                    if(calculation.length < 162){
+                    if(calculation === '_'){
+                        calculation = '';
+                    };
+                    calculation+='7';
+                    displayCalculation();}
+                    else{document.querySelector('.js-too-long-message').classList.add('too-long-message-appear')}       
+                " class="number">
+                    7
+                </button>
+                <button onclick="
+                    if(calculation.length < 162){
+                    if(calculation === '_'){
+                        calculation = '';
+                    };
+                    calculation+='8';
+                    displayCalculation();}
+                    else{document.querySelector('.js-too-long-message').classList.add('too-long-message-appear')}      
+                " class="number"> 
+                    8
+                </button>
+                <button onclick="
+                    if(calculation.length < 162){
+                    if(calculation === '_'){
+                        calculation = '';
+                    };
+                    calculation+='9';
+                    displayCalculation();}
+                    else{document.querySelector('.js-too-long-message').classList.add('too-long-message-appear')}       
+                " class="number">
+                    9
+                </button>
+                <button onclick="
+                    if(calculation.length < 162){
+                    if(calculation === '_'){
+                        calculation = '';
+                    };
+                    calculation+=' * ';
+                    displayCalculation();}
+                    else{document.querySelector('.js-too-long-message').classList.add('too-long-message-appear')}       
+                " class="symbol">
+                    *
+                </button>
+            </div>
+            <div class="row4">
+                <button onclick="
+                    if(calculation.length < 162){
+                    if(calculation === '_'){
+                        calculation = '';
+                    };
+                    calculation+='.';
+                    displayCalculation();}
+                    else{document.querySelector('.js-too-long-message').classList.add('too-long-message-appear')}      
+                " class="symbol">
+                    .
+                </button>
+                <button onclick="
+                    if(calculation.length < 162){
+                    if(calculation === '_'){
+                        calculation = '';
+                    };
+                    calculation+='0';
+                    displayCalculation();}
+                    else{document.querySelector('.js-too-long-message').classList.add('too-long-message-appear')}      
+                " class="number">
+                    0
+                </button>
+                <button onclick="
+                    calculation = String(eval(calculation));
+                    displayCalculation();                         
+                " class="symbol">
+                    =
+                </button>
+                <button onclick="
+                    if(calculation.length < 162){
+                    if(calculation === '_'){
+                        calculation = '';
+                    };
+                    calculation+=' / ';
+                    displayCalculation();}
+                    else{document.querySelector('.js-too-long-message').classList.add('too-long-message-appear')}  
+                " class="symbol">
+                    /
+                </button>
+            </div>
+        </div>
+            <button onclick="
+            if(calculation){
+                    calculation = '';
+                    document.querySelector('.js-calculation').innerHTML = 'Cleared.';
+                    removePopup();
+            };         
+            " class="clear-button">
+                Clear (X)
+            </button>
+    
+    
+    
+    </div>
+
+    <script src="calculator.js">
+        
+    </script>
+</body>
+</html>

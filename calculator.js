@@ -7,7 +7,7 @@ let calculation = '';
             
         };
         function type(character) {
-            if(calculation.length < 162){
+            if(calculation.length < 144){
             if(calculation === '_'){
                 calculation = '';
             };
@@ -52,4 +52,10 @@ let calculation = '';
             }
         }
         );
+        function resize (){
+            const body = document.querySelector('.js-body');
+            body.style.height = window.innerHeight;
+            body.style.width = window.innerWidth;
+        }
+        window.onresize = resize()
  
